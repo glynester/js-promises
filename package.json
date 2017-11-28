@@ -1,0 +1,23 @@
+{
+  "name": "js-promises",
+  "version": "1.0.0",
+  "description": "Testing JS promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "js-promises"
+  },
+  "keywords": [
+    "promises",
+    "javascript",
+    "api"
+  ],
+  "author": "glenn bemont",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
