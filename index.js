@@ -25,11 +25,8 @@ function http(url, method){
 	});
 }
 
-
-
 request('http://pngimg.com/uploads/simpsons/simpsons_PNG88.png')
-.pipe(fs.createWriteStream('image.png'));
-
+.pipe(fs.createWriteStream('image.png')); 
 
 // My github id: 20479118
 var user = "glynester", repo="djangogirls",
