@@ -1,4 +1,5 @@
 var request = require('request');
+const fs = require('fs');
 
 function http(url, method){
 	method = method.toLowerCase();
@@ -12,6 +13,7 @@ function http(url, method){
 
 	return new Promise(function(resolve, reject){
 		request[method](options, function(err,response,body){
+			// console.log('statusCode:', response && response.statusCode);
 			if (err){
 				reject(err)
 			}
@@ -23,10 +25,13 @@ function http(url, method){
 	});
 }
 
+
+
+request('http://pngimg.com/uploads/simpsons/simpsons_PNG88.png')
+.pipe(fs.createWriteStream('image.png'));
+
+
 // My github id: 20479118
-
-
-// var user, repo;
 var user = "glynester", repo="djangogirls",
 url = "https://api.github.com/users/" + user;
 console.log("Fetching user...");
@@ -53,7 +58,7 @@ http(url, "GET")
 				langs = Object.values(r)[0];
 			}
 		});
-		console.log(`The language(s) used by "${user}" on the "${repo}" project are: ${langs}`);
+		console.log(`The language(s) used by "${user}" on the "${repo}" project is/are: ${langs}`);
 	})
 	.catch(function(err){
 		console.log("Error caught: ", err);
